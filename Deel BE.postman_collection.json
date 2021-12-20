@@ -1,0 +1,201 @@
+{
+  "info": {
+    "_postman_id": "da7937ec-747d-4754-bcce-5aba327da732",
+    "name": "Deel BE",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get contract",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-profile-id",
+            "value": "1",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/contracts/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["contracts", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get contracts for profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-profile-id",
+            "value": "4",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/contracts?profileId=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["contracts"],
+          "query": [
+            {
+              "key": "profileId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all unpaid jobs",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-profile-id",
+            "value": "1",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/jobs/unpaid?profileId=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["jobs", "unpaid"],
+          "query": [
+            {
+              "key": "profileId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pay for Job",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-profile-id",
+            "value": "1",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/jobs/2/pay",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["jobs", "2", "pay"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Top paid profession",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-profile-id",
+            "value": "1",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/admin/best-profession?start=2019-12-19&end=2022-12-19",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["admin", "best-profession"],
+          "query": [
+            {
+              "key": "start",
+              "value": "2019-12-19"
+            },
+            {
+              "key": "end",
+              "value": "2022-12-19"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get best clients",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "x-profile-id",
+            "value": "1",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/admin/best-clients?start=2019-12-19&end=2022-12-19&limit=3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["admin", "best-clients"],
+          "query": [
+            {
+              "key": "start",
+              "value": "2019-12-19"
+            },
+            {
+              "key": "end",
+              "value": "2022-12-19"
+            },
+            {
+              "key": "limit",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deposit balance",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "x-profile-id",
+            "value": "1",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"amount\": 100\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/balances/deposit/2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3001",
+          "path": ["balances", "deposit", "2"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
